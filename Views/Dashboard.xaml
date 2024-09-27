@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:DemoApp.ViewModels"
+             x:Class="DemoApp.Views.Dashboard"
+             BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#434242}">
+    <ContentPage.BindingContext>
+        <vm:DashboardViewModel/>
+    </ContentPage.BindingContext>
+    
+    <Grid RowDefinitions="*,auto">
+        <CarouselView ItemsSource="{Binding ContentPages}" Position="{Binding CurrentPosition}" PositionChangedCommand="{Binding SelectButtonCommand}" PositionChangedCommandParameter="{Binding CurrentPosition}" IsSwipeEnabled="True" Loop="False">
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <ContentView Content="{Binding}"/>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+
+        <CollectionView x:Name="OptionsView" Grid.Row="1" HeightRequest="50" BackgroundColor="#8c9494" ItemsSource="{Binding OptionsIcons}">
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" Span="6"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout VerticalOptions="Center" HeightRequest="50">
+
+                        <StackLayout.Triggers>
+                            <DataTrigger TargetType="StackLayout" Binding="{Binding IsSelected}" Value="True">
+                                <Setter Property="BackgroundColor" Value="#848484"/>
+                            </DataTrigger>
+                            <DataTrigger TargetType="StackLayout" Binding="{Binding IsSelected}" Value="False">
+                                <Setter Property="BackgroundColor" Value="Transparent"/>
+                            </DataTrigger>
+                        </StackLayout.Triggers>
+
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type ContentPage}}, Path=BindingContext.ChangeTabCommand}" CommandParameter="{Binding LabelText}"/>
+                        </StackLayout.GestureRecognizers>
+
+                        <Image Source="{Binding ImageSource}" BackgroundColor="Transparent" HorizontalOptions="Center"  VerticalOptions="CenterAndExpand"  HeightRequest="30" WidthRequest="30"/>
+                    </StackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>

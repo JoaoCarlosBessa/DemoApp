@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DemoApp.Views.Chat">
+    <Grid RowDefinitions="auto, *, auto" RowSpacing="10">
+        <Border BackgroundColor="#8C9494" Margin="15" HeightRequest="60" StrokeShape="RoundRectangle 5" Stroke="Transparent">
+            <Grid ColumnDefinitions="*,*">
+                <Label 
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    Margin="15,-10,0,0"
+                    FontSize="40"
+			        Text="Bate-papo"
+                    FontFamily="Gabriola"
+                    TextColor="#264040"/>
+
+                <Image 
+                    Source="chat.png"
+                    HeightRequest="40"
+                    Grid.Column="1"
+                    Margin="0,0,15,0"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"/>
+            </Grid>
+        </Border>
+        <Grid Grid.Row="1" RowDefinitions="auto, *">
+            <Grid RowDefinitions="auto,auto" RowSpacing="10" Margin="10" Grid.RowSpan="2">
+                <Border BackgroundColor="#BECBCB" StrokeShape="RoundRectangle 30">
+                    <Grid RowDefinitions="auto, *">
+                        <Label Text="Eu" Margin="15,10,0,0" TextColor="#749392" FontFamily="Gabriola" FontSize="30"/>
+                        <Label Text="Oi, tudo bem?" Grid.Row="1" TextColor="#273F3F" Margin="15,0,0,0" VerticalOptions="End" FontFamily="Gabriola" FontSize="35"/>
+                    </Grid>
+                </Border>
+                <Border BackgroundColor="#6A908F" StrokeShape="RoundRectangle 30" Grid.Row="1">
+                    <Grid RowDefinitions="auto, *">
+                        <Label Text="Você" TextColor="#C2CECE" HorizontalOptions="End" Margin="0,10,15,0" FontFamily="Gabriola" FontSize="30"/>
+                        <Label Text="Sim, e você?" TextColor="#273F3F" HorizontalOptions="End" VerticalOptions="End" Margin="0,0,15,0" Grid.Row="1" FontFamily="Gabriola" FontSize="35"/>
+                    </Grid>
+                </Border>
+            </Grid>
+        </Grid>
+        <Border BackgroundColor="#BECBCB" Grid.Row="3" Margin="15" HeightRequest="80" StrokeShape="RoundRectangle 30" Stroke="Transparent">
+            <Grid ColumnDefinitions="*,auto">
+                <Entry VerticalOptions="Center" TextColor="#273F3F" Margin="10,0,0,0" HeightRequest="80" FontSize="30" FontFamily="Gabriola"/>
+                <Border Grid.Column="1" HorizontalOptions="End" WidthRequest="80" HeightRequest="80" StrokeShape="RoundRectangle 30" BackgroundColor="#779494">
+                    <Image 
+                        Source="iconeenviar.png"
+                        HeightRequest="70"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"/>
+                </Border>
+            </Grid>
+        </Border>
+    </Grid>
+</ContentView>

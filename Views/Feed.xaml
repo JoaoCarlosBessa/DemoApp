@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DemoApp.Views.Feed">
+    <Grid RowDefinitions="auto, *" RowSpacing="30">
+        <Border BackgroundColor="#8C9494" Margin="15" HeightRequest="60" StrokeShape="RoundRectangle 5" Stroke="Transparent">
+            <Grid ColumnDefinitions="*,*">
+                <Label 
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    Margin="15,-10,0,0"
+                    FontSize="40"
+			        Text="Feed"
+                    FontFamily="Gabriola"
+                    TextColor="#264040"/>
+
+                <Image 
+                    Source="Feed.png"
+                    HeightRequest="40"
+                    Grid.Column="1"
+                    Margin="0,0,15,0"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"/>
+            </Grid>
+        </Border>
+        <Grid Grid.Row="1" RowDefinitions="auto, *">
+            <Image Source="profile.png"
+                  HeightRequest="150"
+                  HorizontalOptions="Center"
+                  VerticalOptions="Center"/>
+
+        </Grid>
+    </Grid>
+</ContentView>

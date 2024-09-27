@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DemoApp.Views.Profile">
+    <Grid RowDefinitions="Auto, *" RowSpacing="30">
+        <Border BackgroundColor="#8C9494" Margin="15" HeightRequest="60" StrokeShape="RoundRectangle 5" Stroke="Transparent">
+            <Grid ColumnDefinitions="*,*">
+                <Label 
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    Margin="15,-10,0,0"
+                    FontSize="40"
+			        Text="Perfil"
+                    FontFamily="Gabriola"
+                    TextColor="#264040"/>
+
+                <Image 
+                    Source="user.png"
+                    HeightRequest="40"
+                    Grid.Column="1"
+                    Margin="0,0,15,0"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"/>
+            </Grid>
+        </Border>
+        <Grid Grid.Row="1" RowSpacing="5" RowDefinitions="auto, *">
+            <Image Source="profile.png"
+                   HeightRequest="150"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"/>
+            <Grid Grid.Row="2" ZIndex="1" Margin="10" RowSpacing="10" RowDefinitions="auto,auto,auto,auto">
+                <Border BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#434242}" StrokeShape="RoundRectangle 15">
+                    <Entry PlaceholderColor="{AppThemeBinding Light=DarkGray, Dark=Gray}" Placeholder="Nome:"/>
+                </Border>
+                <Border BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#434242}" StrokeShape="RoundRectangle 15" Grid.Row="1">
+                    <Entry PlaceholderColor="{AppThemeBinding Light=DarkGray, Dark=Gray}" Placeholder="Gênero:"/>
+                </Border>
+                <Border BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#434242}" StrokeShape="RoundRectangle 15" Grid.Row="2">
+                    <Entry PlaceholderColor="{AppThemeBinding Light=DarkGray, Dark=Gray}" Placeholder="Idade:"/>
+                </Border>
+                <Border BackgroundColor="{AppThemeBinding Light=#FFFFFF, Dark=#434242}" StrokeShape="RoundRectangle 15" Grid.Row="3">
+                    <Entry PlaceholderColor="{AppThemeBinding Light=DarkGray, Dark=Gray}" Placeholder="Hobbies:"/>
+                </Border>
+            </Grid>
+        </Grid>
+    </Grid>
+</ContentView>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DemoApp.Views.Books">
+    <Grid RowDefinitions="auto, *" RowSpacing="30">
+        <Border BackgroundColor="#8C9494" Margin="15" HeightRequest="60" StrokeShape="RoundRectangle 5" Stroke="Transparent">
+            <Grid ColumnDefinitions="*,*">
+                <Label 
+                    HorizontalOptions="Start"
+                    VerticalOptions="Center"
+                    Margin="15,-10,0,0"
+                    FontSize="40"
+			        Text="Meus Livros"
+                    FontFamily="Gabriola"
+                    TextColor="#264040"/>
+
+                <Image 
+                    Source="books.png"
+                    HeightRequest="40"
+                    Grid.Column="1"
+                    Margin="0,0,15,0"
+                    HorizontalOptions="End"
+                    VerticalOptions="Center"/>
+            </Grid>
+        </Border>
+        <Grid Grid.Row="1" RowDefinitions="auto, *, auto">
+            <Image Source="profile.png"
+                   IsVisible="False"
+                   HeightRequest="150"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"/>
+            <Button Grid.Row="3" 
+                    VerticalOptions="End" 
+                    HorizontalOptions="End"
+                    Padding="0"
+                    Text="+" 
+                    Margin="20"
+                    TextColor="White" 
+                    BackgroundColor="#848484"
+                    FontSize="30"
+                    CornerRadius="35"
+                    WidthRequest="70"
+                    HeightRequest="70"
+                    FontAttributes="Bold"/>
+        </Grid>
+    </Grid>
+</ContentView>
